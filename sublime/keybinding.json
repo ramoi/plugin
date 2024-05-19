@@ -1,0 +1,5 @@
+[
+	{ "keys": ["alt+n"], "command": "numbering" },
+	{ "keys": ["alt+c"], "command": "tocamel" },
+	{ "keys": ["alt+s"], "command": "tosnake" },
+]
