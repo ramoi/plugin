@@ -1,0 +1,8 @@
+{
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-h>": false
+    },
+    "vim.useCtrlKeys": true,
+    "vim.incsearch": true
+}
