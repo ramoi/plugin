@@ -1,10 +1,13 @@
 filetype off
 set shellslash
-set rtp+=~/vimfiles/bundle/Vundle.vim
-call vundle#begin('~/vimfiles/bundle')
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/bundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mg979/vim-visual-multi', {'branch': 'master'} 
+Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/rainbow_parentheses.vim'
+Plugin 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -20,3 +23,35 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+
+
+"Syntax Highligthing
+if has ("syntax")
+    syntax on
+endif
+
+set autoindent
+set cindent      "C언어 자동 들여쓰기
+set nu
+
+set smartindent
+set tabstop=4
+set expandtab
+set shiftwidth=4
+
+set incsearch
+set hlsearch
+
+"가장 최근에 수정한 곳에 커서 위치
+au BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line("$") |
+\ exe "norm g`\"" |
+\ endif
+
+set laststatus=2 "상태바 상시 출력
+set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
+
+
+let g:VM_maps = {}
+let g:VM_maps["Find Next"] = '<M-j>'
+let g:VM_maps["Find Prev"] = '<M-k>'
