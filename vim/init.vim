@@ -26,6 +26,10 @@ if has ("syntax")
     syntax on
 endif
 
+"whitespace draw
+set list            " 공백 문자를 화면에 표시
+set listchars=tab:▸\ ,trail:·,extends:>,precedes:<,nbsp:␣
+
 set autoindent
 set cindent      "C언어 자동 들여쓰기set nu
 
